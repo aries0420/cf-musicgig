@@ -1,0 +1,12 @@
+<h1>Dashboard#gig</h1>
+
+<ul>
+  <% @gigs.each do |gig| %>
+  <li><%= gig.title %></li>
+  <% end %>
+</ul>
+
+<%= paginate @gigs %><br>
+
+<%= link_to "Home", root_path %> |
+<%= link_to "New Gig", new_gig_path %>
