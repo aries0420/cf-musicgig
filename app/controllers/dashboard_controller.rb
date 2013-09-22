@@ -2,9 +2,8 @@ class DashboardController < ApplicationController
 
   before_action :user_logged_in!
 
-  # def index
-  #   @gigs = Gig.page(params[:page]).per(4)
-  # end
+  def index
+  end
 
   def gig
     #@gigs = Gig.all

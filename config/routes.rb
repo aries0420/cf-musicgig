@@ -10,7 +10,7 @@ CfMusicgig::Application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:create]
-  resources :gigs, only: [:new, :create]
+  resources :gigs
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
