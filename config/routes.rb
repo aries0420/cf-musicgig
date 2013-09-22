@@ -1,4 +1,6 @@
 CfMusicgig::Application.routes.draw do
+  # get "gigs/new"
+  # get "gigs/create"
   # get "dashboard/gig"
   # get "sessions/new"
   # get "users/new"
@@ -8,6 +10,7 @@ CfMusicgig::Application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:create]
+  resources :gigs, only: [:new, :create]
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
