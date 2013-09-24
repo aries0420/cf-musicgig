@@ -12,7 +12,7 @@ if Rails.env.production?
     # In conjunction with protect_from_dos_attacks (see below), this allows
     # our rails app to enforce access, e.g. to allow access to a 64x64 thumbnail
     # but prohibit access to the original image.
-    c.storage_headers = {'x-amz-acl' => 'private'}
+    # c.storage_headers = {'x-amz-acl' => 'private'}
     c.bucket_name = 'musicgig'
     c.access_key_id = ENV['S3_KEY']
     c.secret_access_key = ENV['S3_SECRET']
