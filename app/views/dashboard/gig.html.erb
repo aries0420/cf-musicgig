@@ -3,12 +3,14 @@
 <table>
   <thead>
     <tr>
+      <th>Thumbnail</th>
       <th>Gig Title</th>
     </tr>
   </thead>
   <tbody>
     <% @gigs.each do |gig| %>
       <tr>
+        <td><%= image_tag gig.cover_image.thumb('100x100').url if gig.cover_image_uid %></td>
         <td><%= gig.title %></td>
         <td>
           <%= link_to "Show", gig %> |

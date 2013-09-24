@@ -3,5 +3,8 @@
 <div>
   Description: <%= @gig.description %>
 </div><br>
+<div>
+  <%= image_tag @gig.cover_image.thumb("300x").url %>
+</div><br>
 
 <%= link_to "Back To Dashboard", dashboard_path %>

@@ -15,7 +15,16 @@ end
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
+  gem "binding_of_caller"
 end
+
+group :development do
+  gem "better_errors"
+end
+
+# Use Dragonfly for image/file uploading
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.15'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
