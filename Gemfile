@@ -25,6 +25,7 @@ end
 # Use Dragonfly for image/file uploading
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.15'
+gem 'fog'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
