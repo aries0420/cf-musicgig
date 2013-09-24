@@ -1,5 +1,7 @@
 # require 'dragonfly/rails/images'
 
+This is the config for S3
+
 require 'dragonfly'
 
 app = Dragonfly[:images]
