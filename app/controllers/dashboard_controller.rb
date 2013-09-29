@@ -7,6 +7,6 @@ class DashboardController < ApplicationController
 
   def gig
     #@gigs = Gig.all
-    @gigs = Gig.page(params[:page]).per(4)
+    @gigs = Gig.page(params[:page]).per(5)
   end
 end

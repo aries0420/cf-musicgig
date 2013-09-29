@@ -1,28 +1,37 @@
-<h1>Gig Dashboard</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <h2>Gig Dashboard</h2>
+      <p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Gig Image</th>
+              <th>Gig Title</th>
+              <th>Description</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @gigs.each do |gig| %>
+              <tr>
+                <td><%= image_tag gig.cover_image.thumb("100x100").url if gig.cover_image_uid %></td>
+                <td><%= gig.title %></td>
+                <td><%= gig.description %></td>
+                <td><%= gig.location %></td>
+                <td><%= link_to "Show", gig %></td>
+                <td><%= link_to "Edit", edit_gig_path(gig) %></td>
+                <td><%= link_to "Delete", gig, method: :delete, confirm: "Are you sure you want to delete this gig?" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Thumbnail</th>
-      <th>Gig Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @gigs.each do |gig| %>
-      <tr>
-        <td><%= image_tag gig.cover_image.thumb("100x100").url if gig.cover_image_uid %></td>
-        <td><%= gig.title %></td>
-        <td>
-          <%= link_to "Show", gig %> |
-          <%= link_to "Edit", edit_gig_path(gig) %> |
-          <%= link_to "Delete", gig, method: :delete, confirm: "Are you sure you want to delete this gig?" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table><br>
+      <ul class="pagination"><%= paginate @gigs %></ul>
+      </p>
+      <p class="btn btn-default"><%= link_to "Home", root_path %></p>
+      <p class="btn btn-default"><%= link_to "New Gig", new_gig_path %></p>
+    </div>
+  </div>
 
-<%= paginate @gigs %><br>
-
-<%= link_to "Home", root_path %> |
-<%= link_to "New Gig", new_gig_path %>
+</div> <!-- /container -->

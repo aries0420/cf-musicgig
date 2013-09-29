@@ -42,6 +42,6 @@ class GigsController < ApplicationController
   private
 
   def gig_params
-    params.require(:gig).permit(:title, :description, :cover_image)
+    params.require(:gig).permit(:title, :description, :cover_image, :retained_cover_image, :genre, :location, :date)
   end
 end

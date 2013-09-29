@@ -1,22 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Music Gig</title>
+  <title>MusicGig</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if current_user.present? %>
-    Welcome <%= current_user.email %> | <%= link_to "Sign Out", logout_path %>
-  <% else %>
-    <%= link_to "Register", new_user_path %> | <%= link_to "Sign In", login_path %>
-  <% end %><br>
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">MusicGig</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboard <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Gig", dashboard_path %></li>
+                <li><a href="https://github.com/aries0420/cf-musicgig" target="_blank">GitHub</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <div>
+              <li class="navbar-text">
+              <% if current_user.present? %>Welcome <%= current_user.email %> | <%= link_to "Sign Out", logout_path %>
+              <% else %>
+                <%= link_to "Register", new_user_path %> | <%= link_to "Sign In", login_path %>
+              <% end %>
+              </li>
+            </div>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+  </nav>
 
   <%= notice %>
   <%= alert %>
   <%= yield %>
+  <hr>
+
+  <footer>
+    <p>&copy; MusicGig 2013</p>
+  </footer>
+</div> <!-- /container -->
 
 </body>
 </html>

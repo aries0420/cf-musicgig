@@ -1,10 +1,18 @@
 <h1><%= @gig.title %></h1>
 
-<div>
-  Description: <%= @gig.description %>
-</div><br>
-<div>
-  <%= image_tag @gig.cover_image.thumb("x300>").url %>
-</div><br>
+<dl>
+  <dt>Description:</dt>
+  <dd><%= @gig.description %></dd><br>
+  <dt>Location:</dt>
+  <dd><%= @gig.location %></dd><br>
+  <dt>Genre:</dt>
+  <dd><%= @gig.genre %></dd><br>
+  <dt>Event Date:</dt>
+  <dd><%= @gig.date.strftime("%b %d %Y") %></dd><br>
+  <dd><%= image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid %></dd>
+  <% # image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid, class: "thumbnail" %>
+</dl>
+<br>
 
-<%= link_to "Back To Dashboard", dashboard_path %>
+<p class="btn btn-default"><%= link_to "Back To Dashboard", dashboard_path %></p>
+<p class="btn btn-default"><%= link_to "Edit Gig", edit_gig_path %></p>

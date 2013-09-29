@@ -20,6 +20,11 @@ end
 
 group :development do
   gem "better_errors"
+  gem 'meta_request'
+end
+
+group :test do
+  gem 'pry-rails'
 end
 
 # Use Dragonfly for image/file uploading
@@ -29,6 +34,7 @@ gem 'fog'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', git: 'git@github.com:thomas-mcdonald/bootstrap-sass.git'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
