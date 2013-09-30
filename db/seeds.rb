@@ -19,10 +19,10 @@ Gig.create([
 
 
 User.create([
-  { :email => "a@b.c", :password_digest => "$2a$10$JH1v0qmqeU2cZeX.A/4PUO61Pdr6Y5/9iNFw80Qc3/ohxIqsLYeJW", :created_at => "2013-09-30 06:58:45", :updated_at => "2013-09-30 06:58:45" },
-  { :email => "lagig@gmail.com", :password_digest => "$2a$10$sgOZHfHOzGqPuL5DAt8VEOKJkJhCmBgl2o3d2D1JGkpAyiTEVzTVe", :created_at => "2013-09-30 08:03:27", :updated_at => "2013-09-30 08:03:27" },
+  { :email => "a@b.c", :password_digest => "$2a$10$JH1v0qmqeU2cZeX.A/4PUO61Pdr6Y5/9iNFw80Qc3/ohxIqsLYeJW", :created_at => "2013-09-30 06:58:45", :updated_at => "2013-09-30 06:58:45", :first_name => "Aries", :last_name => "Chan" },
+  { :email => "lagig@gmail.com", :password_digest => "$2a$10$sgOZHfHOzGqPuL5DAt8VEOKJkJhCmBgl2o3d2D1JGkpAyiTEVzTVe", :created_at => "2013-09-30 08:03:27", :updated_at => "2013-09-30 08:03:27", :first_name => "Joe", :last_name => "Smith" },
   { :email => "wantagig@gmail.com", :password_digest => "$2a$10$yuudC7X6syvKhBnmvpXTv.TwOXRs.wemTS4I9bbzOpbjN0g7.pPJ6", :created_at => "2013-09-30 08:04:23", :updated_at => "2013-09-30 08:04:23" },
-  { :email => "ilovegigs@gmail.com", :password_digest => "$2a$10$kr7RrIrbfqBGPEnWauTdP.QukEzf5lsZnh.73wwoNlIiqInTzn8ZS", :created_at => "2013-09-30 08:09:44", :updated_at => "2013-09-30 08:09:44" },
+  { :email => "ilovegigs@gmail.com", :password_digest => "$2a$10$kr7RrIrbfqBGPEnWauTdP.QukEzf5lsZnh.73wwoNlIiqInTzn8ZS", :created_at => "2013-09-30 08:09:44", :updated_at => "2013-09-30 08:09:44", :first_name => "Michael", :last_name => "Jordan" },
   { :email => "thebestgig@gmail.com", :password_digest => "$2a$10$EArsHD1kU1VNksrh1t.3LuGbOD937VRtXt8VBZfdS70yACuN8oygC", :created_at => "2013-09-30 08:15:50", :updated_at => "2013-09-30 08:15:50" }
 ])
 

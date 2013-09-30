@@ -1,5 +1,16 @@
 <h1>My Account</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <% if current_user? %>
+      <p class="text-primary">
+        Name: <%= current_user.first_name %> <%= current_user.last_name %><br>
+        Email: <%= current_user.email %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <h3>My Gigs</h3>
 
