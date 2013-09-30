@@ -6,7 +6,6 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 gem 'kaminari'
-
 gem 'seed_dump'
 
 group :production do
@@ -55,6 +54,10 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Forms, mail {
+gem 'mail_form', '~> 1.5.0.rc'
+gem 'simple_form'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

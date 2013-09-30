@@ -11,10 +11,12 @@ CfMusicgig::Application.routes.draw do
   resources :users, only: [:new, :create, :index]
   resources :sessions, only: [:create]
   resources :gigs
+  resources :contacts, only: [:new, :create]
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   get '/dashboard', to: 'dashboard#gig'
+  get '/about', to: 'welcome#about'
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
