@@ -7,6 +7,8 @@ gem 'rails', '4.0.0'
 
 gem 'kaminari'
 
+gem 'seed_dump'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'

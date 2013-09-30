@@ -19,9 +19,8 @@
           <tbody>
             <% @gigs.each do |gig| %>
               <tr>
-                <td><%= gig.title %></td>
+                <td><%= link_to gig.title, gig %></td>
                 <td><%= truncate(gig.description, length: 50) %></td>
-                <td class="btn btn-default"><%= link_to "View details", gig %></td>
                 <td class="btn btn-default"><%= link_to "Edit", edit_gig_path(gig) %></td>
                 <td class="btn btn-default"><%= link_to "Delete", gig, method: :delete, confirm: "Are you sure you want to delete this gig?" %></td>
               </tr>
