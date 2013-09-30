@@ -1,19 +1,28 @@
 <h1><%= @gig.title %></h1>
 
-<dl>
-  <dt>Description:</dt>
-  <dd><%= @gig.description %></dd><br>
-  <dt>Location:</dt>
-  <dd><%= @gig.location %></dd><br>
-  <dt>Genre:</dt>
-  <dd><%= @gig.genre %></dd><br>
-  <dt>Event Date:</dt>
-  <dd><%= @gig.date.strftime("%b %d %Y") %></dd><br>
-  <dd><%= image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid %></dd>
-  <% # image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid, class: "thumbnail" %>
-</dl>
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <dl>
+        <dt>Description:</dt>
+        <dd><%= @gig.description %></dd><br>
+        <dt>Location:</dt>
+        <dd><%= @gig.location %></dd><br>
+        <dt>Genre:</dt>
+        <dd><%= @gig.genre %></dd><br>
+        <dt>Event Date:</dt>
+        <dd><%= @gig.date.strftime("%b %d %Y") %></dd><br>
+        <dd><%= image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid %></dd>
+        <% # image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid, class: "thumbnail" %>
+      </dl>
+      <br>
 
-<p class="btn btn-default"><%= link_to "Back To Dashboard", dashboard_path %></p>
-<p class="btn btn-default"><%= link_to "Edit Gig", edit_gig_path %></p>
-<p class="btn btn-default"><%= link_to "New Gig", new_gig_path %></p>
+      <p class="btn btn-default"><%= link_to "Back To Dashboard", dashboard_path %></p>
+      <p class="btn btn-default"><%= link_to "New Gig", new_gig_path %></p>
+      <% if current_user == @gig.user %>
+        <p class="btn btn-default"><%= link_to "Edit Gig", edit_gig_path %></p>
+        <p class="btn btn-default"><%= link_to "Delete Gig", @gig, method: :delete, confirm: "Are you sure you want to delete this gig?" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

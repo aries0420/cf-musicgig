@@ -5,7 +5,8 @@ class DashboardController < ApplicationController
   end
 
   def gig
-    #@gigs = Gig.all
-    @gigs = Gig.page(params[:page]).per(5)
+    # @gigs = Gig.all
+    # @gigs = Gig.page(params[:page]).per(5)
+    @gigs = Gig.order(:date).page(params[:page]).per(5)
   end
 end

@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-10">
       <% if current_user? %>
       <p>
         <table class="table table-hover">
@@ -20,14 +20,17 @@
             <% @gigs.each do |gig| %>
               <tr>
                 <td><%= gig.title %></td>
-                <td><%= gig.description %></td>
-                <td><a class="btn btn-default" href="#">View details &raquo;</a></td>
+                <td><%= truncate(gig.description, length: 50) %></td>
+                <td class="btn btn-default"><%= link_to "View details", gig %></td>
+                <td class="btn btn-default"><%= link_to "Edit", edit_gig_path(gig) %></td>
+                <td class="btn btn-default"><%= link_to "Delete", gig, method: :delete, confirm: "Are you sure you want to delete this gig?" %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
       </p>
       <% end %>
+      <p class="btn btn-default"><%= link_to "View All Gigs", dashboard_path %></p>
     </div>
   </div>
 </div> <!-- /container -->
