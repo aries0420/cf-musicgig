@@ -1,4 +1,8 @@
 class GigsController < ApplicationController
+  before_action :user_logged_in!
+
+  def index
+  end
 
   def new
     @gig = Gig.new
@@ -6,10 +10,12 @@ class GigsController < ApplicationController
 
   def create
     @gig = Gig.new(gig_params)
+    @gig.user = current_user
 
     if @gig.save
       flash[:notice] = "Your gig has been added!"
-      redirect_to dashboard_path
+      # redirect_to dashboard_path
+      redirect_to @gig
     else
       render "new"
     end

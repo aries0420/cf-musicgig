@@ -1,6 +1,19 @@
 <div class="row">
   <div class="col-lg-6">
   <%= form_for @gig, :html => {:multipart => true} do |f| %>
+
+    <% if @gig.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h3><%= pluralize(@gig.errors.count, "error") %>
+          prohibited this gig from being saved:</h3>
+        <ul>
+        <% @gig.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: "form-control" %>
@@ -13,16 +26,16 @@
       <%= f.label :location %>
       <%= f.select :location, [["Seattle", "Seattle"], ["New York", "New York"]], class: "form-control input-lg" %>
     </div>
-        <div class="form-group">
+    <div class="form-group">
       <%= f.label :genre %>
       <%= f.select :genre, [["Rock", "Rock"], ["Pop", "Rock"], ["Jazz", "Jazz"], ["Alternative", "Alternative"]], class: "form-control" %>
     </div>
-        <div class="form-group">
+    <div class="form-group">
       <%= f.label "Event Date" %>
       <%= f.date_field :date, class: "form-control" %>
     </div>
-        <div class="form-group">
-      <%= f.file_field :cover_image %>
+    <div class="form-group">
+      <%= f.file_field :cover_image, class: "btn-file" %>
       <%= f.hidden_field :retained_cover_image %>
     </div>
     <%= f.submit class: "btn btn-primary" %>

@@ -40,7 +40,7 @@
           <ul class="nav navbar-nav navbar-right">
             <div>
               <li class="navbar-text">
-              <% if current_user.present? %>Welcome <%= current_user.email %> | <%= link_to "Sign Out", logout_path %>
+              <% if current_user.present? %>Welcome <%= link_to current_user.email, users_path %> | <%= link_to "Sign Out", logout_path %>
               <% else %>
                 <%= link_to "Register", new_user_path %> | <%= link_to "Sign In", login_path %>
               <% end %>
@@ -52,8 +52,13 @@
     </div>
   </nav>
 
-  <%= notice %>
-  <%= alert %>
+  <% flash.each do |key, value| %>
+    <div class="alert <%= key == :alert ? "alert-danger" : "alert-info" %>">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= value %>
+    </div>
+  <% end %>
+
   <%= yield %>
   <hr>
 

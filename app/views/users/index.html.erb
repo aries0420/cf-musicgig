@@ -1,0 +1,33 @@
+<h1>My Account</h1>
+
+
+<h3>My Gigs</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <% if current_user? %>
+      <p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Gig Title</th>
+              <th>Description</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @gigs.each do |gig| %>
+              <tr>
+                <td><%= gig.title %></td>
+                <td><%= gig.description %></td>
+                <td><a class="btn btn-default" href="#">View details &raquo;</a></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div> <!-- /container -->

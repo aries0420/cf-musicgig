@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :user_logged_in!, only: [:index]
+
+  def index
+    @gigs = current_user.gigs.all
+  end
+
   def new
     @user = User.new
   end
