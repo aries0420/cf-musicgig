@@ -11,7 +11,7 @@
         <dt>Genre:</dt>
         <dd><%= @gig.genre %></dd><br>
         <dt>Event Date:</dt>
-        <dd><%= @gig.date.strftime("%b %d %Y") %></dd><br>
+        <dd><%= @gig.date.strftime("%b %d %Y") rescue "Unfilled" %></dd><br>
         <dd><%= image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid %></dd>
         <% # image_tag @gig.cover_image.thumb("x300>").url if @gig.cover_image_uid, class: "thumbnail" %>
       </dl>
