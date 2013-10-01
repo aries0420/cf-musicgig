@@ -24,7 +24,7 @@
                 <td><%= link_to gig.title, gig %></td>
                 <td><%= truncate(gig.description, length: 50) %></td>
                 <td><%= gig.location %></td>
-                <td><%= gig.date.strftime("%b %d %Y") %></td>
+                <td><%= gig.date.strftime("%b %d %Y") rescue "Unfilled" %></td>
                 <td class="btn btn-default"><%= link_to "View details", gig %></td>
               </tr>
             <% end %>
