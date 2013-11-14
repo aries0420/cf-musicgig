@@ -15,7 +15,11 @@ class GigsController < ApplicationController
     if @gig.save
       flash[:notice] = "Your gig has been added!"
       # redirect_to dashboard_path
-      redirect_to @gig
+      respond_to do |format|
+        format.html { redirect_to @gig }
+        format.js
+      end
+      # redirect_to @gig
     else
       render "new"
     end
@@ -42,7 +46,11 @@ class GigsController < ApplicationController
   def destroy
     @gig = Gig.find(params[:id])
     @gig.destroy
-    redirect_to dashboard_url
+    respond_to do |format|
+      format.html { redirect_to dashboard_url }
+      format.js
+    end
+    # redirect_to dashboard_url
   end
 
   private

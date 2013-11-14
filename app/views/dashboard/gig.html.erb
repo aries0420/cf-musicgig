@@ -33,7 +33,7 @@
 
       <ul class="pagination"><%= paginate @gigs %></ul>
       </p>
-      <p class="btn btn-default"><%= link_to "New Gig", new_gig_path %></p>
+      <p class="btn btn-default"><%= link_to "New Gig", new_gig_path, id: "new_link", remote: true %></p>
     </div>
   </div>
 </div> <!-- /container -->
