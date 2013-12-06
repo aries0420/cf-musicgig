@@ -14,3 +14,6 @@ This is a marketplace/jobboard app for bookers and musicians to post gigs online
 
 ## Authors
 * Kangie Chan
+
+## License
+* MIT: http://musicgig.mit-license.org
